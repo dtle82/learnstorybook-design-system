@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "private": false,
   "dependencies": {
+    "@babel/cli": "^7.8.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -21,11 +22,17 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "build-storybook-docs": "build-storybook -s public --docs",
-    "chromatic": "CHROMATIC_APP_CODE=agfh5xstp8k chromatic"
+    "chromatic": "CHROMATIC_APP_CODE=agfh5xstp8k chromatic",
+    "release": "auto shipit"
   },
   "babel": {
     "presets": [
-      "react-app"
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
     ]
   },
   "eslintConfig": {
@@ -44,7 +51,6 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
     "@storybook/addon-a11y": "^5.3.13",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-docs": "^5.3.13",
